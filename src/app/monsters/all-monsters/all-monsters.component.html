@@ -1,0 +1,6 @@
+<div class="content">
+    <div class="card" *ngFor="let monster of monsters">
+        <span class="name">{{monster.name}}</span>
+        <button class="button" [routerLink]="['/monsters', monster.index]">More Info</button>
+    </div>
+</div>

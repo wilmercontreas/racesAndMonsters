@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.error{
+    padding: 1em;
+    background-color: #f8d7da;
+    border-radius: 10px;
+    color: #842029;
+}
+
+.content{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.info-name{
+    margin-bottom: 2em;
+}
+
+hr {
+    margin: 1em auto;
+    width: 6em;
+    background-color: #8a8989;
+    height: 0.1em;
+    border: none;
+}
+
+.info-body{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.column-left, .column-rigth {
+    padding: 1em;
+    width: 25em;
+}

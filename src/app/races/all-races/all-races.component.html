@@ -1,0 +1,6 @@
+<div class="content">
+    <div class="card" *ngFor="let race of races">
+        <span class="name">{{race.name}}</span>
+        <button class="button" [routerLink]="['/races', race.index]">More Info</button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div *ngIf="raceNotFound; else showInfo" class="error">
+        We don't found any race related to <strong>{{id}}</strong>
+    </div>
+
+    <ng-template #showInfo>
+        <div class="content">
+            <div class="info-name">
+                <h2>{{race.name}}</h2><hr>
+            </div>
+            <div class="info-body">
+                <div class="column-left">
+                    <h4>Speed: </h4><p>{{race.speed}}</p><br>
+                    <h4>Alignment: </h4><p>{{race.alignment}}</p><br>
+                    <h4>Size Description: </h4><p>{{race.size_description}}</p><br>
+                    <h4>Size: </h4><p>{{race.size}}</p><br>
+                    <h4>Age: </h4><p>{{race.age}}</p><br>
+                </div>
+                <div class="column-rigth">
+                    <h4>Language Desc: </h4><p>{{race.language_desc}}</p> <br>
+                    <h4>languages: </h4><p *ngFor="let lang of race.languages">{{lang.name}}</p><br>
+                    <h4>Ability bonuses: </h4><p *ngFor="let ability_bonuses of race.ability_bonuses"> {{ability_bonuses.bonus}}, {{ability_bonuses?.ability_score.name}}</p><br>
+                    <h4>Traits: </h4><p *ngFor="let traits of race.traits"> {{traits.name}}</p><br>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+</div>

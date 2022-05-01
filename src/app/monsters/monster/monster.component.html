@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div *ngIf="monsterNotFound; else showInfo" class="error">
+        We don't found any monster related to <strong>{{id}}</strong>
+    </div>
+
+    <ng-template #showInfo>
+        <div class="content">
+            <div class="info-name">
+                <h2>{{monster.name}}</h2><hr>
+            </div>
+            <div class="info-body">
+                <div class="column-left">
+                    <h4>Speed: </h4><p>walk: {{monster.speed?.walk}} swim: {{monster.speed?.swim}}</p><br>
+                    <h4>Proficiencies: </h4><p *ngFor="let proficiencies of monster.proficiencies">{{proficiencies.proficiency.name}}</p><br>
+                    <h4>Senses: </h4><p>darkvision: {{monster.senses?.darkvision}}, passive perception: {{monster.senses?.passive_perception}}</p><br>
+                    <h4>Special abilities: </h4><p *ngFor="let special_abilities of monster.special_abilities"> <strong>{{special_abilities.name}}:</strong> {{special_abilities.desc}}</p><br>
+                    <h4>Actions: </h4><p *ngFor="let actions of monster.actions"> <strong>{{actions.name}}:</strong> {{actions.desc}}</p><br>
+                    <h4>Legendary actions: </h4><p *ngFor="let legendary_actions of monster.legendary_actions"> <strong>{{legendary_actions.name}}:</strong> {{legendary_actions.desc}}</p><br>
+                </div>
+                <div class="column-rigth">
+                    <h4>Size: </h4><p>{{monster.size}}</p><br>
+                    <h4>Type: </h4><p>{{monster.type}}</p><br>
+                    <h4>Alignment: </h4><p>{{monster.alignment}}</p><br>
+                    <h4>Armor class: </h4><p>{{monster.armor_class}}</p><br>
+                    <h4>Hit points: </h4><p>{{monster.hit_points}}</p><br>
+                    <h4>Hit dice: </h4><p>{{monster.hit_dice}}</p><br>
+                    <h4>Strength: </h4><p>{{monster.strength}}</p><br>
+                    <h4>Dexterity: </h4><p>{{monster.dexterity}}</p><br>
+                    <h4>Constitution: </h4><p>{{monster.constitution}}</p><br>
+                    <h4>Intelligence: </h4><p>{{monster.intelligence}}</p><br>
+                    <h4>Wisdom: </h4><p>{{monster.wisdom}}</p><br>
+                    <h4>Charisma: </h4><p>{{monster.charisma}}</p><br>
+                    <h4>Languages: </h4><p>{{monster.languages}}</p>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+</div>
